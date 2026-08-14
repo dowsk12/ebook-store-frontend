@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BookVerse — Livraria Digital</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/icons/logo.svg" alt="logo" class="logo"> 
+      <span>BookVerse</span>
+    </div>
+    <div class="search-wrap">
+      <input id="searchInput" placeholder="Pesquisar títulos, autores..." />
+    </div>
+    <div class="actions">
+      <button id="btnCart" class="icon-btn">🛒 <span id="badge" class="badge hidden">0</span></button>
+      <a href="login.html" class="link-btn">Entrar</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <aside class="filters card">
+      <h3>Filtros</h3>
+      <div class="filter-group">
+        <label>Categoria</label>
+        <select id="filterCategory">
+          <option value="all">Todos</option>
+          <option value="business">Negócios</option>
+          <option value="selfhelp">Autoajuda</option>
+          <option value="fiction">Ficção</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Ordenar por</label>
+        <select id="sortBy">
+          <option value="popular">Mais populares</option>
+          <option value="price_asc">Preço: menor</option>
+          <option value="price_desc">Preço: maior</option>
+        </select>
+      </div>
+      <div style="margin-top:18px">
+        <button id="btnClearFilters" class="btn full">Limpar filtros</button>
+      </div>
+    </aside>
+
+    <section class="catalog card">
+      <div class="catalog-header">
+        <h2>Livros</h2>
+        <p class="muted" id="catalogSubtitle">Explore nossa seleção</p>
+      </div>
+      <div id="booksGrid" class="grid"></div>
+    </section>
+
+    <aside class="cart card" id="cartPanel">
+      <h3>🛒 Carrinho</h3>
+      <div id="cartList" class="cart-list"></div>
+      <div class="cart-footer">
+        <div class="total">Total: <strong id="cartTotal">0.00 MZN</strong></div>
+        <div class="cart-actions">
+          <button id="btnCheckout" class="btn primary full">Finalizar Compra</button>
+          <button id="btnEmpty" class="btn outline full">Esvaziar</button>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <template id="bookTpl">
+    <article class="book-card">
+      <img class="cover" src="" alt="capa">
+      <div class="info">
+        <h4 class="title"></h4>
+        <p class="author muted"></p>
+        <p class="desc muted small"></p>
+        <div class="meta">
+          <span class="price"></span>
+          <button class="btn add">Adicionar</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script type="module" src="scripts/main.js"></script>
+</body>
+</html>
